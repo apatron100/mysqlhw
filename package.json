@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/apatron100/mysqlhw#readme",
   "dependencies": {
+    "inquire": "^0.4.8",
     "inquirer": "^4.0.0",
     "mysql": "^2.15.0"
   }
