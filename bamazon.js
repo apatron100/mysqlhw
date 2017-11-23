@@ -5,12 +5,12 @@ var connection = mysql.createConnection({
 	port: 3306,
 	user: "root",
 	password: "single",
-	database: "mysqlhw"
+	database: "bamazon"
 })
 
 connection.connect(function(err){
 	if(err) throw err;
-	console.log("connection suscesfull")
+	console.log("connection suscesfull!")
 	makeTable();
 })
 var makeTable = function(){
@@ -21,19 +21,23 @@ var makeTable = function(){
 
 
 				}
-		}promtCustomer = function(res){
-			inquire.promt([{
+				prompt(customer(res);
+
+			})
+		}
+		var	promptCustomer = function(res){
+			inquire.prompt([{
 				type:'input',
 				name:'choice',
 				message "What do you want to buy? [Salir con Q]"
 			}]).then(function(answer){
 				var correct = false;
 				for(var i=0;i<res.length;i++){
-					if(res[i].productname==answer.choice;
+					if(res[i].productname==answer.choice){
 						correct = true;
 						var product=answer.choice;
 						var id=i;
-						inquirer.promt({
+						inquirer.prompt({
 							type:"input",
 							name:"quant",
 							message:"how many would you like to buy",
@@ -46,9 +50,8 @@ var makeTable = function(){
 							}
 						}).then(function(answer){
 							if((res[id].stockquantity-answer.quant)>0){
-								connection.query("UPDATE products SET
-									stockquantity='"+(res[id].stockquantity-
-									answer.quant)+"' WHERE productname='"+product
+								connection.query("UPDATE products SET stockquantity=								stockquantity='"+(res[id].stockquantity-answer.quant									answer.quant)+"' WHERE productname='"+product
+								'"+(res[id].stockquantity-answer.quant)+"'WHERE productname='"+product'
 								+"'", function(err,res2) {
 									console.log("product purchased!");
 									makeTable();
@@ -56,7 +59,7 @@ var makeTable = function(){
 
 						} else {
 							console.log("Seleccion no valida")
-							promtCustomer(res);
+							promptCustomer(res);
 
 						}
 
