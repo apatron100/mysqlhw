@@ -70,7 +70,7 @@ var makeTable = function(){
 							console.log("seleccion no valida");
 							promtCustomer(res);
 						}
+				})
+		}
 
-			})
-	}	}
-}
+
